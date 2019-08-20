@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">PopularMoviesKoin</string>
+    <string name="some_error">Error</string>
+    <string name="api_default_error">Some thing went wrong</string>
+    <string name="connection_error">No internet connection</string>
+    <string name="api_retry_error">Some thing went wrong</string>
+    <string name="error_no_internet_connection">NO Network ? try agian</string>
+</resources>
