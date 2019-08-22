@@ -16,7 +16,7 @@ class PopularMoviesPresenter(private val dataManager: AppDataManager) : BasePres
     @SuppressLint("CheckResult")
     override fun getMovies() {
         if (mvpView?.isNetworkConnected()!!) {
-            mvpView?.showLoading()
+//            mvpView?.showLoading()
             dataManager.getData()
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())

@@ -30,7 +30,6 @@ class Popular_MoviesFragment : BaseFragment(), PopularMoviesContract.View, Movie
     override fun getPopularMovies(Movies: Movie) {
         Timber.d(Movies.toString())
         popularRV.layoutManager = GridLayoutManager(context, 2)
-
         popularRV.addItemDecoration(
             GridSpacingItemDecoration(1, ViewUtils.dpToPx(8F), true, 0)
         )

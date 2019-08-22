@@ -7,9 +7,10 @@ import com.hamza.soluations.popularmovieskoin.R
 import com.hamza.solutions.kolo.ui.base.BaseFragment
 import com.hamza.soluations.popularmovieskoin.ui.base.BaseActivity
 
-
 fun BaseActivity.replaceFragmentToActivity(fragment: Fragment, isSaved: Boolean = false, transitionView: View? = null) {
     val transaction = supportFragmentManager.beginTransaction()
+    transaction.setCustomAnimations(R.anim.enter_from_left,
+        R.anim.exit_to_right)
     transaction.replace(R.id.container, fragment)
     if (isSaved) transaction.addToBackStack(null)
     transitionView?.let {
@@ -17,6 +18,16 @@ fun BaseActivity.replaceFragmentToActivity(fragment: Fragment, isSaved: Boolean 
     }
     transaction.commit()
 }
+
+fun BaseActivity.replaceFragmentToActivityWithSharedElementAnimation(fragment: Fragment, isSaved: Boolean = false, transitionView: View) {
+    val transaction = supportFragmentManager.beginTransaction()
+    transaction.replace(R.id.container, fragment)
+    transaction.setReorderingAllowed(true)
+    transaction.addSharedElement(transitionView, ViewCompat.getTransitionName(transitionView)!!)
+    if (isSaved) transaction.addToBackStack(null)
+    transaction.commit()
+}
+
 
 fun BaseActivity.addFragmentToActivity(fragment: Fragment, isSaved: Boolean = false) {
     val transaction = supportFragmentManager.beginTransaction()

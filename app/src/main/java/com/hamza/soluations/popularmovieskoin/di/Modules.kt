@@ -8,6 +8,8 @@ import com.hamza.soluations.popularmovieskoin.ui.details.MovieDetailsContract
 import com.hamza.soluations.popularmovieskoin.ui.details.MovieDetailsPresenter
 import com.hamza.soluations.popularmovieskoin.ui.popularmovies.PopularMoviesPresenter
 import com.hamza.soluations.popularmovieskoin.ui.popularmovies.PopularMoviesContract
+import com.hamza.soluations.popularmovieskoin.ui.viewposter.ViewPosterContract
+import com.hamza.soluations.popularmovieskoin.ui.viewposter.ViewPosterPresenter
 import okhttp3.OkHttpClient
 import org.koin.dsl.module
 import retrofit2.Retrofit
@@ -64,8 +66,12 @@ val applicationModule = module(override = true) {
     single {
         PopularMoviesPresenter(get())
     }
+    single {
+        ViewPosterPresenter(get())
+    }
 
     factory<PopularMoviesContract.Presenter<PopularMoviesContract.View>> { get() }
+    factory<ViewPosterContract.Presenter<ViewPosterContract.View>> { get() }
 
     single {
         MovieDetailsPresenter(get())

@@ -7,12 +7,6 @@ import com.hamza.soluations.popularmovieskoin.di.applicationModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
 import org.koin.core.context.startKoin
-import org.koin.dsl.koinApplication
-
-import retrofit2.Retrofit
-import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
-import retrofit2.converter.gson.GsonConverterFactory
-import uk.co.chrisjenx.calligraphy.CalligraphyConfig
 
 class App : MultiDexApplication() {
 

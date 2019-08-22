@@ -14,7 +14,7 @@
         <item name="android:textColor">@color/colorSecondaryText</item>
         <item name="android:colorBackground">@color/whiteColor</item>
         <item name="android:colorButtonNormal" tools:targetApi="lollipop">@color/colorAccent</item>
-        <!--<item name="coordinatorLayoutStyle">@style/Widget.Design.CoordinatorLayout</item>-->
+        <item name="android:windowContentTransitions" tools:targetApi="lollipop">true</item>
     </style>
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
